@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>إنتاجي – منتِج | ابدأ يومك بهدف</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
             --ink-soft:    #3d4a22;
             --muted:       #6b7a4a;
             --white:       #ffffff;
-            --section-gap: 120px;
+            --section-gap: 80px;
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -37,7 +37,6 @@
             direction: rtl;
         }
 
-        /* ── NOISE TEXTURE OVERLAY ── */
         body::before {
             content: '';
             position: fixed; inset: 0;
@@ -47,9 +46,6 @@
             opacity: 0.4;
         }
 
-        /* ══════════════════════════
-           NAV
-        ══════════════════════════ */
         nav {
             position: fixed; top: 0; right: 0; left: 0; z-index: 100;
             display: flex; align-items: center; justify-content: space-between;
@@ -97,9 +93,6 @@
         }
         .nav-cta:hover { background: var(--olive-light) !important; transform: translateY(-1px); }
 
-        /* ══════════════════════════
-           HERO
-        ══════════════════════════ */
         .hero {
             min-height: 100vh;
             display: grid;
@@ -109,7 +102,6 @@
             overflow: hidden;
         }
 
-        /* خلفية هندسية */
         .hero-bg {
             position: absolute; inset: 0;
             background:
@@ -148,7 +140,7 @@
 
         .hero-title {
             font-family: 'Amiri', serif;
-            font-size: clamp(52px, 8vw, 92px);
+            font-size: clamp(40px, 8vw, 92px);
             font-weight: 700;
             line-height: 1.1;
             color: var(--ink);
@@ -172,7 +164,7 @@
         }
         .hero-sub {
             font-family: 'Amiri', serif;
-            font-size: clamp(20px, 3vw, 28px);
+            font-size: clamp(18px, 3vw, 28px);
             color: var(--gold-dark);
             font-weight: 400;
             font-style: italic;
@@ -180,7 +172,7 @@
             animation: fadeInUp 0.9s ease 0.2s both;
         }
         .hero-desc {
-            font-size: 17px;
+            font-size: 16px;
             color: var(--muted);
             line-height: 1.85;
             max-width: 600px;
@@ -196,7 +188,7 @@
             display: inline-flex; align-items: center; gap: 10px;
             background: var(--olive);
             color: var(--cream);
-            padding: 16px 36px;
+            padding: 14px 28px;
             border-radius: 100px;
             font-family: 'Tajawal', sans-serif;
             font-size: 16px;
@@ -218,7 +210,7 @@
             background: transparent;
             border: 1.5px solid rgba(74,94,42,0.3);
             color: var(--olive);
-            padding: 15px 32px;
+            padding: 13px 28px;
             border-radius: 100px;
             font-family: 'Tajawal', sans-serif;
             font-size: 16px;
@@ -231,11 +223,12 @@
             background: rgba(74,94,42,0.05);
         }
 
-        /* phone mockup */
         .hero-mockup {
             position: relative;
             margin-top: 72px;
             animation: fadeInUp 1s ease 0.5s both;
+            display: inline-block;
+            width: auto;
         }
         .phone-frame {
             width: 260px;
@@ -311,23 +304,22 @@
             border: 1.5px solid rgba(255,255,255,0.2);
         }
 
-        /* floating badges */
         .float-badge {
             position: absolute;
             background: var(--white);
             border: 1px solid rgba(74,94,42,0.15);
             border-radius: 14px;
-            padding: 10px 14px;
+            padding: 8px 12px;
             box-shadow: 0 8px 32px rgba(26,31,14,0.12);
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             color: var(--ink-soft);
             display: flex; align-items: center; gap: 8px;
             white-space: nowrap;
             animation: float 4s ease-in-out infinite;
         }
-        .float-badge.b1 { top: 20%; right: -10%; animation-delay: 0s; }
-        .float-badge.b2 { bottom: 30%; left: -8%; animation-delay: 1.5s; }
+        .float-badge.b1 { top: 5%; right: -30px; animation-delay: 0s; }
+        .float-badge.b2 { bottom: 10%; left: -30px; animation-delay: 1.5s; }
         .float-badge .icon {
             width: 28px; height: 28px; border-radius: 8px;
             display: flex; align-items: center; justify-content: center;
@@ -336,9 +328,6 @@
         .float-badge.b1 .icon { background: rgba(201,168,76,0.15); }
         .float-badge.b2 .icon { background: rgba(74,94,42,0.12); }
 
-        /* ══════════════════════════
-           SECTION WRAPPER
-        ══════════════════════════ */
         .section-wrap {
             padding: var(--section-gap) 5%;
             position: relative;
@@ -367,58 +356,47 @@
             margin-bottom: 16px;
         }
         .section-desc {
-            font-size: 17px;
+            font-size: 16px;
             color: var(--muted);
             line-height: 1.8;
             max-width: 520px;
         }
 
-        /* ══════════════════════════
-           NUMBERS TICKER
-        ══════════════════════════ */
         .stats-bar {
             background: var(--olive);
-            padding: 0 5%;
-            display: flex; align-items: stretch;
+            padding: 20px 5%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            justify-content: center;
             overflow: hidden;
             position: relative;
         }
-        .stats-bar::before, .stats-bar::after {
-            content: '';
-            position: absolute; top: 0; bottom: 0;
-            width: 80px; z-index: 1;
-        }
-        .stats-bar::before { right: 0; background: linear-gradient(to left, var(--olive), transparent); }
-        .stats-bar::after  { left: 0;  background: linear-gradient(to right, var(--olive), transparent); }
-
         .stat-item {
-            flex: 0 0 auto;
-            padding: 36px 56px;
+            flex: 1 1 auto;
+            padding: 20px 20px;
             text-align: center;
             border-left: 1px solid rgba(255,255,255,0.1);
         }
         .stat-item:last-child { border-right: 1px solid rgba(255,255,255,0.1); }
         .stat-num {
             font-family: 'Amiri', serif;
-            font-size: 44px;
+            font-size: 32px;
             font-weight: 700;
             color: var(--gold-light);
             line-height: 1;
             display: block;
         }
         .stat-txt {
-            font-size: 13px;
+            font-size: 12px;
             color: rgba(255,255,255,0.65);
             margin-top: 6px;
-            white-space: nowrap;
+            white-space: normal;
         }
 
-        /* ══════════════════════════
-           FEATURES
-        ══════════════════════════ */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2px;
             background: rgba(74,94,42,0.08);
             border-radius: 24px;
@@ -427,7 +405,7 @@
         }
         .feat-card {
             background: var(--cream);
-            padding: 40px 36px;
+            padding: 32px 28px;
             position: relative;
             transition: background 0.3s;
             cursor: default;
@@ -466,9 +444,6 @@
             letter-spacing: 0.05em;
         }
 
-        /* ══════════════════════════
-           SECTIONS SHOWCASE
-        ══════════════════════════ */
         .showcase-bg {
             background: var(--ink);
             position: relative;
@@ -495,7 +470,7 @@
         }
         .sec-pill {
             display: flex; align-items: center; gap: 12px;
-            padding: 14px 20px;
+            padding: 12px 18px;
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 16px;
             cursor: pointer;
@@ -507,9 +482,9 @@
             border-color: var(--olive-mid);
             transform: translateY(-2px);
         }
-        .sec-pill .emoji { font-size: 22px; }
+        .sec-pill .emoji { font-size: 20px; }
         .sec-pill .name {
-            font-size: 14px; font-weight: 600;
+            font-size: 13px; font-weight: 600;
             color: rgba(255,255,255,0.8);
         }
         .sec-pill:hover .name, .sec-pill.active .name { color: var(--cream); }
@@ -519,7 +494,7 @@
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 24px;
-            padding: 40px;
+            padding: 30px 24px;
             position: relative; z-index: 1;
             min-height: 200px;
             display: none;
@@ -527,7 +502,7 @@
         .showcase-panel.active { display: block; }
         .panel-title {
             font-family: 'Amiri', serif;
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 700;
             color: var(--gold-light);
             margin-bottom: 12px;
@@ -537,8 +512,8 @@
             background: rgba(255,255,255,0.07);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 100px;
-            padding: 7px 16px;
-            font-size: 13px;
+            padding: 6px 14px;
+            font-size: 12px;
             color: rgba(255,255,255,0.75);
             display: flex; align-items: center; gap: 6px;
         }
@@ -549,37 +524,26 @@
             background: var(--gold);
         }
 
-        /* ══════════════════════════
-           HOW IT WORKS
-        ══════════════════════════ */
         .steps-wrap {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 0;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
             margin-top: 72px;
             position: relative;
         }
-        .steps-wrap::before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            right: 10%; left: 10%;
-            height: 1px;
-            background: linear-gradient(to left, transparent, var(--olive-mid), transparent);
-        }
         .step {
             text-align: center;
-            padding: 0 24px;
+            padding: 0 16px;
             position: relative;
         }
         .step-num {
-            width: 80px; height: 80px;
+            width: 70px; height: 70px;
             border-radius: 50%;
             border: 2px solid var(--olive-mid);
             background: var(--cream);
             display: flex; align-items: center; justify-content: center;
             font-family: 'Amiri', serif;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             color: var(--olive);
             margin: 0 auto 24px;
@@ -598,20 +562,11 @@
         }
         .step-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
-        /* ══════════════════════════
-           AI TIPS SECTION
-        ══════════════════════════ */
         .ai-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            gap: 60px;
             align-items: center;
-        }
-        @media (max-width: 768px) {
-            .ai-section { grid-template-columns: 1fr; gap: 48px; }
-            .nav-links { display: none; }
-            .float-badge { display: none; }
-            .steps-wrap::before { display: none; }
         }
         .tips-stack {
             display: flex; flex-direction: column;
@@ -621,7 +576,7 @@
             background: var(--white);
             border: 1px solid rgba(74,94,42,0.1);
             border-radius: 20px;
-            padding: 20px 24px;
+            padding: 18px 20px;
             display: flex; gap: 16px;
             align-items: flex-start;
             box-shadow: 0 4px 20px rgba(26,31,14,0.06);
@@ -654,12 +609,9 @@
             border-radius: 100px;
         }
 
-        /* ══════════════════════════
-           GAMIFICATION
-        ══════════════════════════ */
         .gamif-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 16px;
             margin-top: 64px;
         }
@@ -667,7 +619,7 @@
             background: var(--white);
             border: 1px solid rgba(74,94,42,0.1);
             border-radius: 20px;
-            padding: 28px 20px;
+            padding: 24px 16px;
             text-align: center;
             transition: all 0.25s;
         }
@@ -679,16 +631,13 @@
         }
         .gamif-card:hover .gamif-title { color: var(--cream); }
         .gamif-card:hover .gamif-desc  { color: rgba(255,255,255,0.65); }
-        .gamif-emoji { font-size: 36px; margin-bottom: 16px; }
+        .gamif-emoji { font-size: 32px; margin-bottom: 12px; }
         .gamif-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
         .gamif-desc  { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
-        /* ══════════════════════════
-           TESTIMONIALS
-        ══════════════════════════ */
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
             margin-top: 64px;
         }
@@ -726,13 +675,10 @@
         .testi-role { font-size: 12px; color: var(--muted); }
         .stars { color: var(--gold); font-size: 12px; margin-bottom: 12px; }
 
-        /* ══════════════════════════
-           CTA FINAL
-        ══════════════════════════ */
         .cta-section {
             background: var(--olive);
             text-align: center;
-            padding: 100px 5%;
+            padding: 80px 5%;
             position: relative;
             overflow: hidden;
         }
@@ -744,25 +690,25 @@
         }
         .cta-title {
             font-family: 'Amiri', serif;
-            font-size: clamp(36px, 5vw, 60px);
+            font-size: clamp(32px, 5vw, 60px);
             font-weight: 700;
             color: var(--cream);
             margin-bottom: 16px;
             position: relative; z-index: 1;
         }
         .cta-sub {
-            font-size: 17px;
+            font-size: 16px;
             color: rgba(255,255,255,0.7);
-            margin-bottom: 48px;
+            margin-bottom: 40px;
             position: relative; z-index: 1;
         }
         .btn-gold {
             display: inline-flex; align-items: center; gap: 10px;
             background: var(--gold);
             color: var(--ink);
-            padding: 18px 48px;
+            padding: 16px 40px;
             border-radius: 100px;
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 800;
             text-decoration: none;
             position: relative; z-index: 1;
@@ -775,12 +721,9 @@
             box-shadow: 0 12px 40px rgba(201,168,76,0.5);
         }
 
-        /* ══════════════════════════
-           FOOTER
-        ══════════════════════════ */
         footer {
             background: var(--ink);
-            padding: 40px 5%;
+            padding: 30px 5%;
             display: flex; align-items: center; justify-content: space-between;
             flex-wrap: wrap; gap: 16px;
         }
@@ -790,7 +733,7 @@
             font-weight: 700;
             color: var(--gold-light);
         }
-        .footer-links { display: flex; gap: 24px; }
+        .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
         .footer-links a {
             font-size: 13px;
             color: rgba(255,255,255,0.4);
@@ -800,9 +743,6 @@
         .footer-links a:hover { color: rgba(255,255,255,0.8); }
         .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
 
-        /* ══════════════════════════
-           ANIMATIONS
-        ══════════════════════════ */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-16px); }
             to   { opacity: 1; transform: translateY(0); }
@@ -823,17 +763,133 @@
             50%       { opacity: 0.6; transform: scale(0.8); }
         }
 
-        /* scroll reveal */
         .reveal {
             opacity: 0; transform: translateY(32px);
             transition: opacity 0.7s ease, transform 0.7s ease;
         }
         .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* Responsive (Mobile) */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero {
+                padding: 100px 5% 60px;
+            }
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+                max-width: 280px;
+                margin: 0 auto;
+            }
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+            .float-badge.b1 {
+                top: -10px;
+                right: -20px;
+                transform: scale(0.8);
+            }
+            .float-badge.b2 {
+                bottom: -10px;
+                left: -20px;
+                transform: scale(0.8);
+            }
+            .stats-bar {
+                flex-direction: column;
+                gap: 0;
+            }
+            .stat-item {
+                border-left: none;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                padding: 16px;
+            }
+            .stat-item:last-child {
+                border-bottom: none;
+                border-right: none;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .steps-wrap {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .steps-wrap::before {
+                display: none;
+            }
+            .ai-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .gamif-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .sections-wheel {
+                justify-content: center;
+            }
+            .sec-pill {
+                flex: 0 0 auto;
+            }
+            .showcase-panel {
+                padding: 20px 16px;
+            }
+            .panel-title {
+                font-size: 20px;
+            }
+            .panel-act {
+                font-size: 11px;
+                padding: 5px 12px;
+            }
+            .cta-section {
+                padding: 60px 5%;
+            }
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .float-badge {
+                display: none;
+            }
+            .hero-title {
+                font-size: 36px;
+            }
+            .hero-sub {
+                font-size: 16px;
+            }
+            .hero-desc {
+                font-size: 14px;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+            .stat-num {
+                font-size: 28px;
+            }
+            .feat-card {
+                padding: 24px 20px;
+            }
+            .tip-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .tip-icon {
+                margin-bottom: 8px;
+            }
+        }
     </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
     <div class="nav-logo">
         <span class="dot"></span>
@@ -847,7 +903,6 @@
     </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-pattern"></div>
@@ -877,7 +932,6 @@
             <a href="#how" class="btn-secondary">كيف يعمل؟</a>
         </div>
 
-        <!-- Phone Mockup -->
         <div class="hero-mockup">
             <div style="position: relative; display: inline-block;">
                 <div class="phone-frame">
@@ -928,7 +982,6 @@
     </div>
 </section>
 
-<!-- STATS BAR -->
 <div class="stats-bar">
     <div class="stat-item">
         <span class="stat-num" data-target="9">٠</span>
@@ -948,7 +1001,6 @@
     </div>
 </div>
 
-<!-- FEATURES -->
 <section id="features" class="section-wrap reveal">
     <div class="section-label">المميزات</div>
     <h2 class="section-title">كل ما تحتاجه في مكان واحد</h2>
@@ -991,7 +1043,6 @@
     </div>
 </section>
 
-<!-- SECTIONS SHOWCASE -->
 <section id="sections" class="section-wrap showcase-bg reveal">
     <div style="position: relative; z-index: 1;">
         <div class="section-label">الأقسام</div>
@@ -1113,7 +1164,6 @@
     </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section id="how" class="section-wrap reveal">
     <div style="text-align: center; max-width: 600px; margin: 0 auto;">
         <div class="section-label" style="justify-content: center;">كيف يعمل</div>
@@ -1139,7 +1189,6 @@
     </div>
 </section>
 
-<!-- AI TIPS -->
 <section class="section-wrap reveal" style="background: var(--gold-pale);">
     <div class="ai-section">
         <div>
@@ -1176,7 +1225,6 @@
     </div>
 </section>
 
-<!-- GAMIFICATION -->
 <section class="section-wrap reveal">
     <div style="text-align: center; max-width: 600px; margin: 0 auto;">
         <div class="section-label" style="justify-content: center;">التحفيز</div>
@@ -1211,7 +1259,6 @@
     </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="section-wrap reveal" style="background: var(--olive-pale);">
     <div style="text-align: center; max-width: 600px; margin: 0 auto;">
         <div class="section-label" style="justify-content: center;">آراء المستخدمين</div>
@@ -1257,7 +1304,6 @@
     </div>
 </section>
 
-<!-- FINAL CTA -->
 <section id="cta" class="cta-section">
     <h2 class="cta-title">يومك يستحق أكثر<br>من قائمة مهام</h2>
     <p class="cta-sub">انضم وابدأ رحلتك نحو إنتاجية متكاملة — مجاناً</p>
@@ -1269,7 +1315,6 @@
     </a>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <div class="footer-logo">إنتاجي – منتِج</div>
     <div class="footer-links">
@@ -1281,7 +1326,6 @@
 </footer>
 
 <script>
-    // Sections panel switcher
     function showPanel(idx) {
         document.querySelectorAll('.sec-pill').forEach((p, i) => {
             p.classList.toggle('active', i === idx);
@@ -1291,7 +1335,6 @@
         });
     }
 
-    // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(e => {
@@ -1303,7 +1346,6 @@
     }, { threshold: 0.1 });
     reveals.forEach(r => observer.observe(r));
 
-    // Animated number counters
     const counters = document.querySelectorAll('.stat-num[data-target]');
     const arabic = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
     const toArabic = n => String(n).split('').map(d => arabic[+d] ?? d).join('');
@@ -1311,11 +1353,11 @@
     const counterObs = new IntersectionObserver((entries) => {
         entries.forEach(e => {
             if (!e.isIntersecting) return;
-            const el     = e.target;
+            const el = e.target;
             const target = +el.dataset.target;
-            let   current = 0;
-            const step   = Math.max(1, Math.ceil(target / 40));
-            const timer  = setInterval(() => {
+            let current = 0;
+            const step = Math.max(1, Math.ceil(target / 40));
+            const timer = setInterval(() => {
                 current = Math.min(current + step, target);
                 el.textContent = toArabic(current);
                 if (current >= target) clearInterval(timer);
@@ -1325,7 +1367,6 @@
     }, { threshold: 0.5 });
     counters.forEach(c => counterObs.observe(c));
 
-    // Sticky nav shadow
     window.addEventListener('scroll', () => {
         document.querySelector('nav').style.boxShadow =
             window.scrollY > 20 ? '0 4px 24px rgba(26,31,14,0.08)' : 'none';
