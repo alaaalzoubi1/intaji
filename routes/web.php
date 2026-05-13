@@ -8,5 +8,5 @@ Route::get('/', function () {
 })->name('landing');
 
 Route::get('/dashboard', function () {
-    return view('dashboard'); // سيبحث عن admin.blade.php
-})->name('admin.dashboard');
+    return view('dashboard');
+})->name('dashboard');
